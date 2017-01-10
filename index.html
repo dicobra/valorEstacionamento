@@ -16,7 +16,7 @@
             var ht=hs-he;
             var mt=ms-me;
             var valor;
-            if(hs>he)
+            if(hs<he)
                 alert("Hora de Saida nao pode ser menor que hora de entrada!!!");
             ///calculo de hora
             if(mt<0){
@@ -41,11 +41,11 @@
         <div style="text-align: center; color: red;">
             <h1>Estacionamento</h1>
             <h2>Isira Hora de entrada</h2>
-            <input id="he" type="time" min="8" max="20" placeholder="HORA ENTRADA" name="horEntrada">
-            <input id="me" type="time" min="0" max="60" placeholder="MINUTO ENTRADA" name="minEntrada">
+            <input id="he" type="number" min="8" max="20" placeholder="HORA ENTRADA" name="horEntrada">
+            <input id="me" type="number" min="0" max="60" placeholder="MINUTO ENTRADA" name="minEntrada">
             <h2>Insira a hora de Saida</h2>
-            <input id="hs" type="time" min="8" max="20" placeholder="HORA SAIDA" name="HoraSaida">
-            <input id="ms" type="time" min="0" max="60" placeholder="MINUTO SAIDA" name="minSaida">
+            <input id="hs" type="number" min="8" max="20" placeholder="HORA SAIDA" name="HoraSaida">
+            <input id="ms" type="number" min="0" max="60" placeholder="MINUTO SAIDA" name="minSaida">
             <br>
             <button onclick="somahora()" >Calcular</button>
             <h2>Total de Horas</h2>
