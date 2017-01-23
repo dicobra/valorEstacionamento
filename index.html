@@ -26,7 +26,7 @@
             valor =0;
             valor=4*ht;
 
-            if(mt<31){
+            if(mt<31&&mt>0){
                 valor+=4/2;
             }
 
@@ -44,15 +44,15 @@
                 document.getElementById("htotal").value=ht+":0"+mt;
             }
 
-            if(hs==he){
+            if(hs==he)
                 if(ms<me){
                     alert("Hora de Saida nao pode ser menor que hora de entrada!!!");
                     document.getElementById("htotal").value="0";
                     document.getElementById("valor").value="0";
                 }
-            }
 
-            if(hs<he){
+            if(ht<0){
+                alert("here");
                 alert("Hora de Saida nao pode ser menor que hora de entrada!!!");
                 document.getElementById("htotal").value="0";
                 document.getElementById("valor").value="0";
@@ -64,12 +64,12 @@
     <body style=" width: 95%; height: 80%;">
         <div style="text-align: center; color: red;">
             <h1>Estacionamento</h1>
-            <h2>Isira Hora de entrada</h2>
-            <input id="he" type="number" min="8" max="20" placeholder="HORA ENTRADA" name="horEntrada">
-            <input id="me" type="number" min="0" max="60" placeholder="MINUTO ENTRADA" name="minEntrada">
+            <h2>Insira Hora de entrada</h2>
+            <input id="he" type="number" min="8" max="20" placeholder="HORA ENTRADA">
+            <input id="me" type="number" min="0" max="60" placeholder="MINUTO ENTRADA">
             <h2>Insira a hora de Saida</h2>
-            <input id="hs" type="number" min="8" max="20" placeholder="HORA SAIDA" name="HoraSaida">
-            <input id="ms" type="number" min="0" max="60" placeholder="MINUTO SAIDA" name="minSaida">
+            <input id="hs" type="number" min="8" max="20" placeholder="HORA SAIDA">
+            <input id="ms" type="number" min="0" max="60" placeholder="MINUTO SAIDA">
             <br>
             <button onclick="somahora()" >Calcular</button>
             <h2>Total de Horas</h2>
