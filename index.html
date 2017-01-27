@@ -10,9 +10,21 @@
     <script type="text/javascript">
         function somahora(){
             var he=document.getElementById("he").value;
+            if(he<10){
+                he='0'+he;
+            }
             var me=document.getElementById("me").value;
+            if(me<10){
+                me='0'+me;
+            }
             var hs=document.getElementById("hs").value;
+            if(hs<10){
+                hs='0'+hs;
+            }
             var ms=document.getElementById("ms").value;
+            if(ms<10){
+                ms='0'+ms;
+            }
             var ht=hs-he;
             var mt=ms-me;
             var valor;
@@ -51,7 +63,69 @@
                     document.getElementById("valor").value="0";
                 }
 
-            if(ht<0){
+            if(hs<he){
+                alert("Hora de Saida nao pode ser menor que hora de entrada!!!");
+                document.getElementById("htotal").value="0";
+                document.getElementById("valor").value="0";
+            }
+        }
+
+         function somahora2(){
+            var he=document.getElementById("he").value;
+            if(he<10){
+                he='0'+he;
+            }
+            var me=document.getElementById("me").value;
+            if(me<10){
+                me='0'+me;
+            }
+            var hs=document.getElementById("hs").value;
+            if(hs<10){
+                hs='0'+hs;
+            }
+            var ms=document.getElementById("ms").value;
+            if(ms<10){
+                ms='0'+ms;
+            }
+            var ht=hs-he;
+            var mt=ms-me;
+            var valor;
+            ///calculo de hora
+            if(mt<0){
+                ht--;
+                mt=60+mt;
+            }
+
+            ///calculo de valor
+            valor =0;
+            valor=2*ht;
+
+            if(mt<31&&mt>0){
+                valor+=2/2;
+            }
+
+            if(mt>30){
+                valor+=2;
+            }
+
+            if(ht>=5){
+                valor=10;
+            }
+
+            document.getElementById("htotal").value=ht+":"+mt;
+            document.getElementById("valor").value="R$"+valor+",00";
+            if(mt<10){
+                document.getElementById("htotal").value=ht+":0"+mt;
+            }
+
+       34     if(hs==he)
+                if(ms<me){
+                    alert("Hora de Saida nao pode ser menor que hora de entrada!!!");
+                    document.getElementById("htotal").value="0";
+                    document.getElementById("valor").value="0";
+                }
+
+            if(hs<he){
                 alert("Hora de Saida nao pode ser menor que hora de entrada!!!");
                 document.getElementById("htotal").value="0";
                 document.getElementById("valor").value="0";
@@ -74,7 +148,7 @@
             <h2>Total de Horas</h2>
             <input id="htotal" type="text" name="total">
             <h2>Valor</h2>
-            <input id="valor" type="text" name="saida">
+            <input id="valor" type="text" name="saida"><button onclick="somahora2()" >Moto</button>
         </div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
@@ -82,5 +156,5 @@
         app.initialize();
     </script>
 </body>
-
+<!--vincius dos santos-->
 </html>
