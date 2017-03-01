@@ -36,18 +36,21 @@
 
             ///calculo de valor
             valor =0;
-            valor=4*ht;
+            valor=6*ht;
 
-            if(mt<31&&mt>0){
-                valor+=4/2;
+            if(mt>0&&mt<21){
+                valor+=2;
             }
 
-            if(mt>30){
+            if(mt>20&&mt<41){
                 valor+=4;
             }
+            
+            if(mt>40)
+                valor+=6;
 
-            if(ht>=5){
-                valor=20;
+            if(ht>=4){
+                valor=25;
             }
 
             document.getElementById("htotal").value=ht+":"+mt;
@@ -97,20 +100,23 @@
                 mt=60+mt;
             }
 
-            ///calculo de valor
+            //calculo de valor
             valor =0;
-            valor=2*ht;
+            valor=3*ht;
 
-            if(mt<31&&mt>0){
-                valor+=2/2;
+            if(mt>0&&mt<21){
+                valor+=1;
             }
 
-            if(mt>30){
+            if(mt>20&&mt<41){
                 valor+=2;
             }
+            
+            if(mt>40)
+                valor+=3;
 
-            if(ht>=5){
-                valor=10;
+            if(ht>=4){
+                valor=12;
             }
 
             document.getElementById("htotal").value=ht+":"+mt;
